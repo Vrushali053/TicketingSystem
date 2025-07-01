@@ -1,9 +1,137 @@
-.ticket-list-container {
+.ticket-page {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reuse your navbar styling */
+.dashboard-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a5275;
+  color: #fff;
+  padding: 14px 20px;
+}
+
+.dashboard-navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboard-navbar .nav-links a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dashboard-navbar .nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Ticket details */
+.ticket-details {
   padding: 20px;
 }
 
-.ticket-card {
+.ticket-details h2 {
+  font-size: 26px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.ticket-details p {
+  font-size: 16px;
+  margin: 6px 0;
+  color: #555;
+}
+
+/* Conversation messages */
+.message-box {
+  background-color: #fff;
   border: 1px solid #ccc;
-  padding: 15px;
-  margin: 10px 0;
+  margin: 20px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.message-meta {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+.message-content {
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Reply section */
+.reply-section {
+  margin: 20px;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.reply-section h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.reply-section textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+.reply-section button {
+  background-color: #0a5275;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reply-section button:hover {
+  background-color: #084563;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .dashboard-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-navbar .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .dashboard-navbar .nav-links a {
+    margin: 8px 10px 0 0;
+    font-size: 14px;
+  }
+
+  .ticket-details h2 {
+    font-size: 22px;
+  }
+
+  .message-content, .reply-section textarea {
+    font-size: 14px;
+  }
 }

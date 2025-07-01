@@ -1,13 +1,130 @@
-.dashboard-container {
-  padding: 20px;
-  text-align: center;
+/* Base layout */
+.dashboard-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.dashboard-container a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #2196F3;
-  color: white;
+/* Navbar Styling */
+.dashboard-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a73e8;
+  padding: 16px 28px;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dashboard-navbar .logo {
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.dashboard-navbar .nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none; /* remove bullets if <li> inside (though we should avoid li for nav-links) */
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-navbar .nav-links a {
+  color: #fff;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.dashboard-navbar .nav-links a:hover {
+  color: #ffeb3b;
+}
+
+/* Main content */
+.dashboard-content {
+  flex: 1;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-content h2 {
+  font-size: 34px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Stats cards stacked vertically */
+.dashboard-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+  text-align: center;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+  font-size: 22px;
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .dashboard-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-navbar .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .dashboard-content h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .stat-card {
+    padding: 24px;
+  }
+
+  .stat-card h3 {
+    font-size: 20px;
+  }
+
+  .stat-card p {
+    font-size: 24px;
+  }
 }
