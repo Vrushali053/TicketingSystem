@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Client.css';
 
-function Client() {
+function Client({ clients }) {
   return (
     <div className="client-container">
       {/* Add New Client Button */}
       <div className="add-button-container">
-        <button className="add-client-button">Add New Client</button>
+        <Link to="/add-client">
+          <button className="add-client-button">Add New Client</button>
+        </Link>
       </div>
 
       {/* Top Row: Header & Search */}
@@ -17,20 +20,27 @@ function Client() {
 
       {/* Table */}
       <table className="client-table">
-        {/* <thead>
+        <thead>
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Service Status</th>
+            <th>Status</th>
           </tr>
-        </thead> */}
+        </thead>
         <tbody>
-          {/* <tr>
-            <td>599</td>
-            <td>Newtown Pizza Shop</td>
-            <td>Active</td>
-          </tr> */}
-          {/* Add more rows here */}
+          {clients.length === 0 ? (
+            <tr>
+              <td colSpan="3" style={{ textAlign: 'center' }}>No clients added yet.</td>
+            </tr>
+          ) : (
+            clients.map((client) => (
+              <tr key={client.id}>
+                <td data-label="Id">{client.id}</td>
+                <td data-label="Name">{client.name}</td>
+                <td data-label="Status">{client.status}</td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>
