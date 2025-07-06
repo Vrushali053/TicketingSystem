@@ -29,6 +29,13 @@ function AppWrapper() {
         <Route path='/create-ticket' element={<TicketCreation />} />
         <Route path='/ticket-list' element={<TicketList />} />
         <Route path='/admin' element={<AdminPanel />} />
+
+        {/* ✅ Catch-all 404 route */}
+        <Route path="*" element={
+          <h2 style={{ textAlign: 'center', marginTop: '50px' }}>
+            404 - Page Not Found
+          </h2>
+        } />
       </Routes>
     </>
   );
@@ -36,7 +43,7 @@ function AppWrapper() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <AppWrapper />
     </Router>
   );
